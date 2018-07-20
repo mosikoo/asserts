@@ -18,7 +18,7 @@ tnpm install --production
 tnpm install ice-scripts@latest
 
 # todo def中区分环境变量
-set BUILD_HASH=daily
+export BUILD_HASH=daily
 tnpm run build
 
 if [ $BUILD_HASH = "daily" ]; then
