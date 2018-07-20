@@ -10,7 +10,7 @@ replaceFile() {
   if [ ! -n "$file" ]; then
     return;
   fi
-  echo "replace \033[36m$file\033[0m to build/$1/index.$1"
+  echo "replace $file to build/$1/index.$1"
   mv $file build/$1/index.$1
 }
 
