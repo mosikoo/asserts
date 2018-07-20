@@ -5,7 +5,6 @@
 # 生产
 # sh index.sh
 
-
 replaceFile() {
   file=`find build/$1/index*.$1`
   if [ ! -n "$file" ]; then
@@ -19,7 +18,7 @@ tnpm install --production
 tnpm install ice-scripts@latest
 
 # todo def中区分环境变量
-tnpm run build
+export BUILD_HASH=daily & tnpm run build
 
 if [ $BUILD_HASH = "daily" ]; then
   replaceFile "js"
@@ -27,5 +26,3 @@ if [ $BUILD_HASH = "daily" ]; then
 fi
 
 mv build .package
-
-
